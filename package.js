@@ -1,5 +1,5 @@
 Package.describe({
-  name: "johnwils:scheduled-collection-updates",
+  name: "johnner:scheduled-collection-updates",
   version: "1.0.0",
   summary:
     "Schedule conditional MongoDB collection updates (reactive, restart-safe, multi-container).",
@@ -17,6 +17,6 @@ Package.onTest(function (api) {
   api.versionsFrom("3.0.3");
   api.use(["ecmascript", "typescript", "mongo", "meteor"]);
   api.use("tinytest");
-  api.use("johnwils:scheduled-collection-updates");
+  api.use("johnner:scheduled-collection-updates");
   api.mainModule("tests.ts", "server");
 });

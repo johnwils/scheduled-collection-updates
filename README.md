@@ -1,11 +1,11 @@
-# johnwils:scheduled-collection-updates
+# johnner:scheduled-collection-updates
 
 Schedule MongoDB updates with Meteor reactivity, restart-safe, and multi-container support.
 
 ## Install
 
 ```bash
-meteor add johnwils:scheduled-collection-updates
+meteor add johnner:scheduled-collection-updates
 ```
 
 ## Quick Start
@@ -13,7 +13,7 @@ meteor add johnwils:scheduled-collection-updates
 1. **Register collections** (server startup):
 
 ```ts
-import { setCollections } from "meteor/johnwils:scheduled-collection-updates";
+import { setCollections } from "meteor/johnner:scheduled-collection-updates";
 import { Tests } from "/imports/api/tests";
 setCollections({ Tests });
 ```
@@ -21,7 +21,7 @@ setCollections({ Tests });
 2. **Define handlers** (`CollectionName.handler` format):
 
 ```ts
-import { defineHandlers } from "meteor/johnwils:scheduled-collection-updates";
+import { defineHandlers } from "meteor/johnner:scheduled-collection-updates";
 const { scheduleUpdate } = defineHandlers({
   "Tests.expireIfProcessing": async (doc) => {
     if (!doc || doc.status !== "processing") return { noop: true };
@@ -131,7 +131,7 @@ Defaults (dev/prod):
   Override:
 
 ```ts
-import { configure } from "meteor/johnwils:scheduled-collection-updates";
+import { configure } from "meteor/johnner:scheduled-collection-updates";
 configure({ pollMs: 500, leaseSeconds: 30, maxAttempts: 3 });
 ```
 
