@@ -1,0 +1,39 @@
+{
+	"name": "scheduled-collection-updates",
+	"version": "1.0.0",
+	"description": "Schedule conditional MongoDB collection updates (reactive, restart-safe, multi-container)",
+	"scripts": {
+		"test": "meteor --port 4005 test-packages ./",
+		"lint": "eslint \"**/*.ts\" --parser @typescript-eslint/parser --ignore-pattern node_modules --ignore-pattern .meteor",
+		"type-check": "tsc --noEmit --skipLibCheck",
+		"type-check:tests": "tsc --noEmit --skipLibCheck --project tsconfig.tests.json",
+		"check": "npm run type-check && npm run lint",
+		"audit": "meteor npm audit --audit-level moderate"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/johnwils/scheduled-collection-updates.git"
+	},
+	"keywords": [
+		"meteor",
+		"mongodb",
+		"scheduled",
+		"updates",
+		"jobs",
+		"queue"
+	],
+	"author": "John Wilson",
+	"license": "MIT",
+	"devDependencies": {
+		"@eslint/js": "^9.33.0",
+		"@types/meteor": "^2.9.9",
+		"@types/node": "^24.3.0",
+		"@typescript-eslint/eslint-plugin": "^8.40.0",
+		"@typescript-eslint/parser": "^8.40.0",
+		"eslint": "^9.33.0",
+		"globals": "^16.3.0",
+		"jiti": "^2.5.1",
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.40.0"
+	}
+}
