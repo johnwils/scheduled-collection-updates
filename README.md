@@ -15,6 +15,7 @@ meteor add johnner:scheduled-collection-updates
 ```ts
 import { setCollections } from "meteor/johnner:scheduled-collection-updates";
 import { Tests } from "/imports/api/tests";
+
 setCollections({ Tests });
 ```
 
@@ -22,6 +23,7 @@ setCollections({ Tests });
 
 ```ts
 import { defineHandlers } from "meteor/johnner:scheduled-collection-updates";
+
 const { scheduleUpdate } = defineHandlers({
   "Tests.expireIfProcessing": async (doc) => {
     if (!doc || doc.status !== "processing") return { noop: true };
@@ -45,6 +47,7 @@ await scheduleUpdate({
   delaySeconds: 30,
   handler: "Tests.expireIfProcessing",
 });
+
 // With args
 await scheduleUpdate({
   targetId: "docId",
@@ -132,6 +135,7 @@ Defaults (dev/prod):
 
 ```ts
 import { configure } from "meteor/johnner:scheduled-collection-updates";
+
 configure({ pollMs: 500, leaseSeconds: 30, maxAttempts: 3 });
 ```
 
@@ -153,6 +157,7 @@ configure({ pollMs: 500, leaseSeconds: 30, maxAttempts: 3 });
 db.ttlUpdateJobs
   .find({ status: "queued", dueAt: { $lte: new Date() } })
   .sort({ dueAt: 1 });
+
 // Failed jobs
 db.ttlUpdateJobs
   .find({ status: "failed" })
