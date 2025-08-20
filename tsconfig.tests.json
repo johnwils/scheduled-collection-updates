@@ -4,8 +4,9 @@
     "strict": false,
     "noImplicitAny": false,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
-  "include": ["tests.ts"],
+  "include": ["tests.ts", "types/**/*.d.ts"],
   "exclude": []
 }

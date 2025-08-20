@@ -40,7 +40,7 @@ export interface HandlerResult {
 
 export type UpdateHandler = (
   doc: BaseDocument | null,
-  args: unknown,
+  args: any,
   ctx: { now: Date; jobId: string }
 ) => HandlerResult | null | Promise<HandlerResult | null>;
 

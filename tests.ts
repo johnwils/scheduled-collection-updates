@@ -24,13 +24,13 @@ import {
   configure,
   defineHandlers,
   setCollections,
-} from "meteor/johnwils:scheduled-collection-updates";
+} from "./index";
 
 // Mock collections for testing
 const TestCollection = new Mongo.Collection<TestDocument>("testCollection");
 
 // Import the Jobs collection to clear it between tests
-import { Jobs } from "meteor/johnwils:scheduled-collection-updates/server/worker";
+import { Jobs } from "./server/worker";
 
 // Test setup helper
 async function resetTest() {
