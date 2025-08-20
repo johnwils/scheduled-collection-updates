@@ -1,6 +1,6 @@
 {
 	"name": "scheduled-collection-updates",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Schedule conditional MongoDB collection updates (reactive, restart-safe, multi-container)",
 	"scripts": {
 		"test": "meteor --port 4005 test-packages ./",

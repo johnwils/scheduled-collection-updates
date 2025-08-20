@@ -1,6 +1,6 @@
 Package.describe({
   name: "johnner:scheduled-collection-updates",
-  version: "1.0.0",
+  version: "1.0.1",
   summary:
     "Schedule conditional MongoDB collection updates (reactive, restart-safe, multi-container).",
   git: "https://github.com/johnwils/scheduled-collection-updates",
