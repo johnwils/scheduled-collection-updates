@@ -27,8 +27,9 @@ import { defineHandlers } from "meteor/johnner:scheduled-collection-updates";
 const { scheduleUpdate } = defineHandlers({
   "Tests.expireIfProcessing": async (doc) => {
     if (!doc || doc.status !== "processing") return { noop: true };
+
     return {
-      selector: { status: "processing" },
+      selector: { status: "processing" }, // Atomic operation (only process if status is processing)
       modifier: { $set: { status: "expired", expiredAt: new Date() } },
     };
   },
